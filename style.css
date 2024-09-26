@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: chocolate;
+}
+
+main {
+  margin-top: 10px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+}
+
+.mgs-winner {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.game-box {
+  width: 70vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  height: 60vmin;
+  justify-content: center;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+
+  border-radius: 0.3rem;
+  border: none;
+  background: #ffffc7;
+  font-size: 13vmin;
+}
+.hide {
+  display: none;
+}
+
+#resrt-game {
+  margin-top: 10px;
+  background-color: #4559;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+#new-game {
+  background-color: #4559;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+h1 {
+  color: antiquewhite;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.msg {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+#trun-msg {
+  color: antiquewhite;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.center {
+  display: grid;
+  justify-content: center;
+  height: 90vh;
+
+  place-content: center;
+}
+.information_box {
+  border-radius: 10px;
+  width: 250px;
+  background-color: white;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.information_box h3 {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+.information_box input {
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid black;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 6px;
+}
+
+.start {
+  margin-top: 10px;
+  background-color: green;
+  border: none;
+  text-transform: capitalize;
+  width: 150px;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  padding: 10px;
+  color: black;
+}

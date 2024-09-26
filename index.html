@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>tic-tac-toe</title>
+  </head>
+  <body>
+    <section class="btn">
+      <div class="center">
+        <div class="information_box">
+          <h3>Player O Name !</h3>
+          <input
+            placeholder="Enter Name"
+            type="text"
+            name="O"
+            id="Player_O"
+            required
+          />
+
+          <h3>Player X Name !</h3>
+          <input placeholder="Enter Name" type="text" name="X" id="Player_X" />
+          <button type="submit" class="start">gameStart</button>
+        </div>
+      </div>
+    </section>
+    <main class="hide main">
+      <div class="mgs-winner-box hide">
+        <p class="mgs-winner">winner</p>
+        <button id="new-game">New game</button>
+      </div>
+      <h1>tic-tac-toe</h1>
+      <div class="game-box">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <div class="msg">
+        <h1>trun =</h1>
+        <samp id="trun-msg">O</samp>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
