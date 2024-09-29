@@ -8,12 +8,16 @@ let btnSection = document.querySelector(".btn");
 let msgtrun = document.querySelector("#trun-msg");
 let PlayerOName = document.getElementById("Player_O");
 let PlayerXName = document.getElementById("Player_X");
+let winSound = document.getElementById("winSound");
+// console.log(winSound);
 let userNameO = "";
 let userNameX = "";
 // msgtrun.innerText = "O";
 let turnO = true;
 let count = 0;
-let winnerarr = [
+let box;
+
+let winneerr = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -36,6 +40,7 @@ const startGame = () => {
 };
 btnstart.addEventListener("click", startGame);
 const resrtGame = () => {
+  pauseaudio();
   turnO = true;
   count = 0;
   msgtrun.innerText = userNameO;
@@ -51,15 +56,20 @@ const enebelboxes = () => {
   for (let box of boxes) {
     box.disabled = false;
     box.innerText = "";
+
+    box.style.backgroundColor = "#ffffc7";
   }
 };
 
 const winnerName = (winner) => {
   if (winner == "O") {
+    // winSound.play();
+    playAudio();
     mgsName.innerText = `Congeatulations, winner is ${userNameO}`;
 
     mgsNameBox.classList.remove("hide");
   } else if (winner == "X") {
+    playAudio();
     mgsName.innerText = `Congeatulations, winner is ${userNameX}`;
 
     mgsNameBox.classList.remove("hide");
@@ -91,14 +101,27 @@ boxes.forEach((box) => {
     }
   });
 });
+function checkwin(pentter) {
+  for (const boxs of boxes) {
+    if (
+      boxs.value == pentter[0] ||
+      boxs.value == pentter[1] ||
+      boxs.value == pentter[2]
+    ) {
+      boxs.style.backgroundColor = "Green";
+    }
+  }
+}
 
 const winnercheck = () => {
-  for (let pentter of winnerarr) {
+  for (let pentter of winneerr) {
     let val1 = boxes[pentter[0]].innerText;
     let val2 = boxes[pentter[1]].innerText;
     let val3 = boxes[pentter[2]].innerText;
     if (val1 != "" && val2 != "" && val3 != "") {
       if (val1 === val2 && val2 === val3) {
+        checkwin(pentter);
+
         winnerName(val1);
         disebleboxes();
         return true;
@@ -109,3 +132,22 @@ const winnercheck = () => {
 };
 
 newGamebtn.addEventListener("click", resrtGame);
+var timesetid;
+function playAudio() {
+  winSound.currentTime = 0.6;
+  winSound.play();
+
+  timesetid = setTimeout(
+    (resetsound = () => {
+      playAudio();
+    }),
+    2000
+  );
+}
+// playAudio();
+
+function pauseaudio() {
+  winSound.loop = false;
+  clearTimeout(timesetid);
+  winSound.pause();
+}
